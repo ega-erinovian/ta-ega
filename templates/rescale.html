@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <title>Klasifikasi Tingkat Sangrai Biji Kopi</title>
+</head>
+<body style="min-height: 100vh;width: 100vw;background-image: linear-gradient(#000000cc, #000000cc), url('https://images.unsplash.com/photo-1524350876685-274059332603?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80'); overflow-x: hidden;">
+  <div class="container pt-5 text-white">
+    <center><h1 class="text-white pt-3" style="padding:30px;font-weight: 900 !important;font-size: 3.2em">KLASIFIKASI SANGRAI BIJI KOPI</h1></center>
+    <div class="container w-100 mt-4">
+      <div class="row d-flex justify-content-center">
+        <div class="col mb-4 text-center">
+          <span class="border border-primary">
+            <img src="{{ user_image }}" alt="User Image" class="img-thumbnail" style="width:150px;height:150px;"/>
+          </span>
+        </div>
+      </div>
+      <!-- Channel RED -->
+      <div class="row text-center">
+        <h4 style="background-color: red;">Nilai pixel citra channel Red</h4>
+        <div class="col">
+          <h4>Sebelum Proses <i>Rescale</i></h4>
+          <table class="table table-dark table-hover">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">40</th>
+                <th scope="col">41</th>
+                <th scope="col">42</th>
+                <th scope="col">43</th>
+                <th scope="col">44</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">40</th>
+                <td>{{ori_matrix[40][40][0]}}</td>
+                <td>{{ori_matrix[40][41][0]}}</td>
+                <td>{{ori_matrix[40][42][0]}}</td>
+                <td>{{ori_matrix[40][43][0]}}</td>
+                <td>{{ori_matrix[40][44][0]}}</td>
+              </tr>
+              <tr>
+                <th scope="row">41</th>
+                <td>{{ori_matrix[41][40][0]}}</td>
+                <td>{{ori_matrix[41][41][0]}}</td>
+                <td>{{ori_matrix[41][42][0]}}</td>
+                <td>{{ori_matrix[41][43][0]}}</td>
+                <td>{{ori_matrix[41][44][0]}}</td>
+              </tr>
+              <tr>
+                <th scope="row">42</th>
+                <td>{{ori_matrix[42][40][0]}}</td>
+                <td>{{ori_matrix[42][41][0]}}</td>
+                <td>{{ori_matrix[42][42][0]}}</td>
+                <td>{{ori_matrix[42][43][0]}}</td>
+                <td>{{ori_matrix[42][44][0]}}</td>
+              </tr>
+              <tr>
+                <th scope="row">43</th>
+                <td>{{ori_matrix[43][40][0]}}</td>
+                <td>{{ori_matrix[43][41][0]}}</td>
+                <td>{{ori_matrix[43][42][0]}}</td>
+                <td>{{ori_matrix[43][43][0]}}</td>
+                <td>{{ori_matrix[43][44][0]}}</td>
+              </tr>
+              <tr>
+                <th scope="row">44</th>
+                <td>{{ori_matrix[44][40][0]}}</td>
+                <td>{{ori_matrix[44][41][0]}}</td>
+                <td>{{ori_matrix[44][42][0]}}</td>
+                <td>{{ori_matrix[44][43][0]}}</td>
+                <td>{{ori_matrix[44][44][0]}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col">
+          <h4>Setelah Proses <i>Rescale</i></h4>
+          <table class="table table-dark table-hover">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">40</th>
+                <th scope="col">41</th>
+                <th scope="col">42</th>
+                <th scope="col">43</th>
+                <th scope="col">44</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">40</th>
+                <td>{{matrix[40][40][0]}}</td>
+                <td>{{matrix[40][41][0]}}</td>
+                <td>{{matrix[40][42][0]}}</td>
+                <td>{{matrix[40][43][0]}}</td>
+                <td>{{matrix[40][44][0]}}</td>
+              </tr>
+              <tr>
+                <th scope="row">41</th>
+                <td>{{matrix[41][40][0]}}</td>
+                <td>{{matrix[41][41][0]}}</td>
+                <td>{{matrix[41][42][0]}}</td>
+                <td>{{matrix[41][43][0]}}</td>
+                <td>{{matrix[41][44][0]}}</td>
+              </tr>
+              <tr>
+                <th scope="row">42</th>
+                <td>{{matrix[42][40][0]}}</td>
+                <td>{{matrix[42][41][0]}}</td>
+                <td>{{matrix[42][42][0]}}</td>
+                <td>{{matrix[42][43][0]}}</td>
+                <td>{{matrix[42][44][0]}}</td>
+              </tr>
+              <tr>
+                <th scope="row">43</th>
+                <td>{{matrix[43][40][0]}}</td>
+                <td>{{matrix[43][41][0]}}</td>
+                <td>{{matrix[43][42][0]}}</td>
+                <td>{{matrix[43][43][0]}}</td>
+                <td>{{matrix[43][44][0]}}</td>
+              </tr>
+              <tr>
+                <th scope="row">44</th>
+                <td>{{matrix[44][40][0]}}</td>
+                <td>{{matrix[44][41][0]}}</td>
+                <td>{{matrix[44][42][0]}}</td>
+                <td>{{matrix[44][43][0]}}</td>
+                <td>{{matrix[44][44][0]}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!-- Channel Green -->
+      <div class="row text-center mt-3">
+        <h4 style="background-color: green;">Nilai pixel citra channel Green</h4>
+        <div class="col">
+          <h4>Sebelum Proses <i>Rescale</i></h4>
+          <table class="table table-dark table-hover">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">40</th>
+                <th scope="col">41</th>
+                <th scope="col">42</th>
+                <th scope="col">43</th>
+                <th scope="col">44</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">40</th>
+                <td>{{ori_matrix[40][40][1]}}</td>
+                <td>{{ori_matrix[40][41][1]}}</td>
+                <td>{{ori_matrix[40][42][1]}}</td>
+                <td>{{ori_matrix[40][43][1]}}</td>
+                <td>{{ori_matrix[40][44][1]}}</td>
+              </tr>
+              <tr>
+                <th scope="row">41</th>
+                <td>{{ori_matrix[41][40][1]}}</td>
+                <td>{{ori_matrix[41][41][1]}}</td>
+                <td>{{ori_matrix[41][42][1]}}</td>
+                <td>{{ori_matrix[41][43][1]}}</td>
+                <td>{{ori_matrix[41][44][1]}}</td>
+              </tr>
+              <tr>
+                <th scope="row">42</th>
+                <td>{{ori_matrix[42][40][1]}}</td>
+                <td>{{ori_matrix[42][41][1]}}</td>
+                <td>{{ori_matrix[42][42][1]}}</td>
+                <td>{{ori_matrix[42][43][1]}}</td>
+                <td>{{ori_matrix[42][44][1]}}</td>
+              </tr>
+              <tr>
+                <th scope="row">43</th>
+                <td>{{ori_matrix[43][40][1]}}</td>
+                <td>{{ori_matrix[43][41][1]}}</td>
+                <td>{{ori_matrix[43][42][1]}}</td>
+                <td>{{ori_matrix[43][43][1]}}</td>
+                <td>{{ori_matrix[43][44][1]}}</td>
+              </tr>
+              <tr>
+                <th scope="row">44</th>
+                <td>{{ori_matrix[44][40][1]}}</td>
+                <td>{{ori_matrix[44][41][1]}}</td>
+                <td>{{ori_matrix[44][42][1]}}</td>
+                <td>{{ori_matrix[44][43][1]}}</td>
+                <td>{{ori_matrix[44][44][1]}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col">
+          <h4>Setelah Proses <i>Rescale</i></h4>
+          <table class="table table-dark table-hover">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">40</th>
+                <th scope="col">41</th>
+                <th scope="col">42</th>
+                <th scope="col">43</th>
+                <th scope="col">44</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">40</th>
+                <td>{{matrix[40][40][0]}}</td>
+                <td>{{matrix[40][41][0]}}</td>
+                <td>{{matrix[40][42][0]}}</td>
+                <td>{{matrix[40][43][0]}}</td>
+                <td>{{matrix[40][44][0]}}</td>
+              </tr>
+              <tr>
+                <th scope="row">41</th>
+                <td>{{matrix[41][40][0]}}</td>
+                <td>{{matrix[41][41][0]}}</td>
+                <td>{{matrix[41][42][0]}}</td>
+                <td>{{matrix[41][43][0]}}</td>
+                <td>{{matrix[41][44][0]}}</td>
+              </tr>
+              <tr>
+                <th scope="row">42</th>
+                <td>{{matrix[42][40][0]}}</td>
+                <td>{{matrix[42][41][0]}}</td>
+                <td>{{matrix[42][42][0]}}</td>
+                <td>{{matrix[42][43][0]}}</td>
+                <td>{{matrix[42][44][0]}}</td>
+              </tr>
+              <tr>
+                <th scope="row">43</th>
+                <td>{{matrix[43][40][0]}}</td>
+                <td>{{matrix[43][41][0]}}</td>
+                <td>{{matrix[43][42][0]}}</td>
+                <td>{{matrix[43][43][0]}}</td>
+                <td>{{matrix[43][44][0]}}</td>
+              </tr>
+              <tr>
+                <th scope="row">44</th>
+                <td>{{matrix[44][40][0]}}</td>
+                <td>{{matrix[44][41][0]}}</td>
+                <td>{{matrix[44][42][0]}}</td>
+                <td>{{matrix[44][43][0]}}</td>
+                <td>{{matrix[44][44][0]}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!-- Channel Blue -->
+      <div class="row text-center mt-3">
+        <h4 style="background-color: blue;">Nilai pixel citra channel Blue</h4>
+        <div class="col">
+          <h4>Sebelum Proses <i>Rescale</i></h4>
+          <table class="table table-dark table-hover">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">40</th>
+                <th scope="col">41</th>
+                <th scope="col">42</th>
+                <th scope="col">43</th>
+                <th scope="col">44</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">40</th>
+                <td>{{ori_matrix[40][40][2]}}</td>
+                <td>{{ori_matrix[40][41][2]}}</td>
+                <td>{{ori_matrix[40][42][2]}}</td>
+                <td>{{ori_matrix[40][43][2]}}</td>
+                <td>{{ori_matrix[40][44][2]}}</td>
+              </tr>
+              <tr>
+                <th scope="row">41</th>
+                <td>{{ori_matrix[41][40][2]}}</td>
+                <td>{{ori_matrix[41][41][2]}}</td>
+                <td>{{ori_matrix[41][42][2]}}</td>
+                <td>{{ori_matrix[41][43][2]}}</td>
+                <td>{{ori_matrix[41][44][2]}}</td>
+              </tr>
+              <tr>
+                <th scope="row">42</th>
+                <td>{{ori_matrix[42][40][2]}}</td>
+                <td>{{ori_matrix[42][41][2]}}</td>
+                <td>{{ori_matrix[42][42][2]}}</td>
+                <td>{{ori_matrix[42][43][2]}}</td>
+                <td>{{ori_matrix[42][44][2]}}</td>
+              </tr>
+              <tr>
+                <th scope="row">43</th>
+                <td>{{ori_matrix[43][40][2]}}</td>
+                <td>{{ori_matrix[43][41][2]}}</td>
+                <td>{{ori_matrix[43][42][2]}}</td>
+                <td>{{ori_matrix[43][43][2]}}</td>
+                <td>{{ori_matrix[43][44][2]}}</td>
+              </tr>
+              <tr>
+                <th scope="row">44</th>
+                <td>{{ori_matrix[44][40][2]}}</td>
+                <td>{{ori_matrix[44][41][2]}}</td>
+                <td>{{ori_matrix[44][42][2]}}</td>
+                <td>{{ori_matrix[44][43][2]}}</td>
+                <td>{{ori_matrix[44][44][2]}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col">
+          <h4>Setelah Proses <i>Rescale</i></h4>
+          <table class="table table-dark table-hover">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">40</th>
+                <th scope="col">41</th>
+                <th scope="col">42</th>
+                <th scope="col">43</th>
+                <th scope="col">44</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">40</th>
+                <td>{{matrix[40][40][2]}}</td>
+                <td>{{matrix[40][41][2]}}</td>
+                <td>{{matrix[40][42][2]}}</td>
+                <td>{{matrix[40][43][2]}}</td>
+                <td>{{matrix[40][44][2]}}</td>
+              </tr>
+              <tr>
+                <th scope="row">41</th>
+                <td>{{matrix[41][40][2]}}</td>
+                <td>{{matrix[41][41][2]}}</td>
+                <td>{{matrix[41][42][2]}}</td>
+                <td>{{matrix[41][43][2]}}</td>
+                <td>{{matrix[41][44][2]}}</td>
+              </tr>
+              <tr>
+                <th scope="row">42</th>
+                <td>{{matrix[42][40][2]}}</td>
+                <td>{{matrix[42][41][2]}}</td>
+                <td>{{matrix[42][42][2]}}</td>
+                <td>{{matrix[42][43][2]}}</td>
+                <td>{{matrix[42][44][2]}}</td>
+              </tr>
+              <tr>
+                <th scope="row">43</th>
+                <td>{{matrix[43][40][2]}}</td>
+                <td>{{matrix[43][41][2]}}</td>
+                <td>{{matrix[43][42][2]}}</td>
+                <td>{{matrix[43][43][2]}}</td>
+                <td>{{matrix[43][44][2]}}</td>
+              </tr>
+              <tr>
+                <th scope="row">44</th>
+                <td>{{matrix[44][40][2]}}</td>
+                <td>{{matrix[44][41][2]}}</td>
+                <td>{{matrix[44][42][2]}}</td>
+                <td>{{matrix[44][43][2]}}</td>
+                <td>{{matrix[44][44][2]}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <center>
+      <h4 class="text-white mb-2 mt-5">Lanjut ke Proses Klasifikasi: </h4>
+      <center><form  class="form-inline mb-4" action = "/predict" method = "post" enctype="multipart/form-data">
+        <input type="hidden" name="file_path" value="{{ user_image }}">
+        <input type="hidden" name="img_array" value="{{ img_array }}">
+        <center><input type = "submit" class="btn btn-primary mt-2" value="Predict"></center>
+      </form></center>
+    </center>
+  </div>
+</div>
+</body>
+</html>
+

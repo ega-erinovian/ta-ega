@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <title>Klasifikasi Tingkat Sangrai Biji Kopi</title>
+</head>
+<body style="min-height: 100vh;width: 100vw;background-image: linear-gradient(#000000cc, #000000cc), url('https://images.unsplash.com/photo-1524350876685-274059332603?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80');">
+  <div class="container pt-5">
+    <center><h1 class="text-white pt-3" style="padding:30px;font-weight: 900 !important;font-size: 3.2em">KLASIFIKASI SANGRAI BIJI KOPI</h1></center>
+    <div class="container w-100 mt-4">
+      <div class="row d-flex justify-content-center align-items-center text-white">
+        <div class="col-3 mb-4 text-center">
+          <span class="border border-primary">
+            <img src="{{ ori_image }}" alt="User Image" class="img-thumbnail" style="width:150px;height:150px;">
+          </span>
+          <h5 class="mt-2">Original Image</h5>
+        </div>
+        {% if rembg == "1" %}
+        <div class="col-1 mb-4 text-center">
+          <h1><i class="bi bi-arrow-right-square"></i></h1>
+        </div>
+        <div class="col-3 mb-4 text-center">
+          <span class="border border-primary">
+            <img src="{{ user_image }}" alt="User Image" class="img-thumbnail" style="width:150px;height:150px;">
+          </span>
+          <h5 class="mt-2">After <i>Remove Background</i></h5>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+    <center>
+      <h4 class="text-white mb-3 mt-5">Lanjut ke Proses Rescale:</h4>
+      <center><form  class="form-inline" action = "/rescale" method = "post" enctype="multipart/form-data">
+        <input type="hidden" name="user_image" value="{{ user_image }}">
+        <center><input type="submit" class="btn btn-primary mt-2" value="Rescale"></center>
+      </form></center>
+    </center>
+  </div>
+</div>
+</body>
+</html>
